@@ -23,3 +23,13 @@ build/
 # Env secrets
 .env
 .env.*
+
+# e2e test output
+e2e/summary.png
+
+# Generated: route cache, logs (kept outside backend/ so the dev reloader never sees them)
+.cache/
+
+# Local AI assistant notes
+CLAUDE.md
+.claude/

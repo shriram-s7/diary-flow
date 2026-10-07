@@ -2,31 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dynamic Route Optimization System</title>
-    <link href='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css' rel='stylesheet' />
-    <script>
-      window.onerror = function(msg, url, lineNo, columnNo, error) {
-        document.body.innerHTML = '<div style="color:red;font-size:20px;padding:20px;z-index:999999;position:absolute;top:0;left:0;background:white;"><h2>CRASH:</h2><pre>' + (error ? error.stack : msg) + '</pre></div>' + document.body.innerHTML;
-        return false;
-      };
-      window.onunhandledrejection = function(event) {
-        document.body.innerHTML = '<div style="color:red;font-size:20px;padding:20px;z-index:999999;position:absolute;top:0;left:0;background:white;"><h2>PROMISE CRASH:</h2><pre>' + event.reason + '</pre></div>' + document.body.innerHTML;
-      };
-      console.error = (function(old) {
-        return function() {
-          var args = Array.prototype.slice.call(arguments);
-          if(args[0] && args[0].message && args[0].message.includes("React")) {
-             document.body.innerHTML = '<div style="color:red;font-size:20px;padding:20px;z-index:999999;position:absolute;top:0;left:0;background:white;"><h2>REACT ERROR:</h2><pre>' + args[0].stack + '</pre></div>' + document.body.innerHTML;
-          }
-          old.apply(console, arguments);
-        };
-      })(console.error);
-    </script>
+    <title>DairyFlow — Milk Dispatch Control</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
-
+</html>

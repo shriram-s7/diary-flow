@@ -1,6 +1,0 @@
-id,fuel_capacity,cost_per_km,max_deliveries,speed_kmph,mileage_kmpl,active
-TRUCK001,100,2,100,60,8,TRUE
-TRUCK002,120,2.5,100,55,7.5,TRUE
-TRUCK003,90,1.8,100,70,10,TRUE
-TRUCK004,110,2.2,100,65,9,true   
-TRUCK005,110,2.2,100,65,9,true   
