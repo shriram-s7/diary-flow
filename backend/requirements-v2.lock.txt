@@ -1,0 +1,9 @@
+# P02 dependency closure, tested on Python 3.10 / Windows.
+# Install alongside requirements-dev.txt. Revalidate before deliberate upgrades.
+SQLAlchemy==2.0.36
+alembic==1.14.0
+greenlet==3.0.3
+typing_extensions==4.16.0
+Mako==1.4.3
+MarkupSafe==3.0.4
+PyJWT==2.10.1

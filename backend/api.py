@@ -46,6 +46,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="DairyFlow", lifespan=lifespan)
+from v2.app import configured_app
+app.mount("/v2", configured_app())
 app.add_middleware(
     CORSMiddleware,
     allow_origins=config.UI_ORIGINS,
