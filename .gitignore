@@ -30,6 +30,12 @@ e2e/summary.png
 # Generated: route cache, logs (kept outside backend/ so the dev reloader never sees them)
 .cache/
 
+# Persistent local v2 data and backup snapshots (not route caches)
+data/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+
 # Local AI assistant notes
 CLAUDE.md
 .claude/
