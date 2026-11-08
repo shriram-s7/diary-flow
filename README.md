@@ -10,6 +10,10 @@ and reacting live when a hub's demand or priority changes. Hub → booth and boo
 - **Control tower**: a demand spike is covered by redirecting a truck already on the road and/or dispatching a
   reserve; every option is evaluated, scored and logged. Auto-apply or manager approval.
 
+**Links:** [GitHub](https://github.com/shriram-s7/diary-flow) · Predecessor: [OptiFlow DRO](https://github.com/shriram-s7/DYNAMIC-ROUTE-OPTIMIZATION-SYSTEM) (DairyFlow grew out of the Dynamic Route Optimization System)
+
+![Manager view](screenshots/manager_1440x900.png)
+
 The domain spec and rules are in [`CLAUDE.md`](CLAUDE.md). Backend details and the full API are in
 [`backend/README.md`](backend/README.md).
 
@@ -49,6 +53,32 @@ Browser test (needs internet; starts its own servers, so stop yours first):
 `backend\venv\Scripts\pip install -r e2e/requirements.txt`, `backend\venv\Scripts\python -m playwright install chromium`,
 then `backend\venv\Scripts\python e2e/map_accuracy.py`. It creates 3 hubs by clicking, runs the plan and checks
 that every pin is on its road point and every truck stops within 30 m of its hub's pin.
+
+## How it works
+
+```mermaid
+flowchart LR
+  S[Scenario or CSV: plant, hubs, fleet] --> PL[planner.py: fewest trucks, cheapest insertion, 2-opt]
+  R[routing.py: OSRM roads, straight-line fallback] --> PL
+  PL --> PLAN[DispatchPlan: stops, ETA, slack, risk]
+  PLAN --> SIM[simulation.py: simulated clock, loading, driving, unloading]
+  EV[Demand change, priority, rain, traffic] --> CT[control_tower.py: evaluate and score options]
+  CT -->|redirect a truck or dispatch a reserve| SIM
+  SIM --> API[FastAPI REST and WebSocket]
+  API --> UI[React + MapLibre manager UI, phone driver app]
+```
+
+Planning and re-planning are deterministic, rule-based heuristics: there is no machine-learning model in this repository. The `timing.py` module is the only place ETA, slack and risk are computed.
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Backend | Python, FastAPI, Uvicorn, Pydantic |
+| Routing | OSRM public API with straight-line fallback and an on-disk route cache |
+| Frontend | React, Vite, MapLibre GL, Axios |
+| v2 prototype | SQLAlchemy, Alembic, SQLite, PyJWT (`backend/v2`) |
+| Tests | pytest (backend); Playwright-based browser check in `e2e/` |
 
 ## Default scenario
 
@@ -112,7 +142,32 @@ implemented once (`timing.py`, `planner.py`).
 ## Layout
 
 ```
-backend/   FastAPI service (see backend/README.md); tests in backend/tests
-frontend/  React + Vite + MapLibre: src/api.js (all calls), src/hooks, src/components, src/DriverView.jsx
+backend/   FastAPI service (see backend/README.md); tests in backend/tests; v2/ is the Allocra v2 prototype
+frontend/  React + Vite + MapLibre: src/api.js (all calls), src/hooks, src/components, src/DriverView.jsx, src/v2/Platform.jsx
+docs/v2/   Allocra v2 specification, decisions, acceptance plan and progress log
+e2e/       stress test and browser map-accuracy check
+screenshots/  manager and driver screenshots
 CLAUDE.md  project spec
 ```
+
+## Tests
+
+```bash
+cd backend
+python -m pytest        # offline; OSRM is replaced by straight-line routes
+cd ../frontend && npm run build
+```
+
+Observed when this README was written: **287 passed, 1 warning** in about 3.5 minutes (this includes the v2 tests). The frontend build, the stress test and the browser test were not run.
+
+## Status and limitations
+
+- **v1 (the app above)** is complete and demo-ready: plan, simulate, control tower, driver app.
+- **Allocra v2** (`/platform`, `backend/v2`, `docs/v2`) is **partial**: per `docs/v2/PROGRESS.md`, 4 of 31 planned tasks are complete (P00-P03) with P04 partly done (settings, network, fleet, account management). Setup editors and the machine-learning parts of the spec are still pending, and the v2 gates G1-G7 have not passed. Run it with `start-v2-demo.ps1` and open `http://localhost:5600/platform`.
+- State is held in memory; restarting the backend resets the scenario.
+- Scope is the plant-to-hub layer for Chennai only. Real dairy practices in the v2 defaults are unvalidated assumptions.
+- Road routes depend on the public OSRM server; offline it falls back to straight lines.
+
+## License
+
+No license specified.
