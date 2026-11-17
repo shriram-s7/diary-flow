@@ -1,4 +1,4 @@
-"""Pydantic models for DairyFlow. Entity names and units follow CLAUDE.md.
+"""Pydantic models for DairyFlow. Entity names and units follow PROJECT_SPEC.md.
 
 Units: litres (_l), minutes from midnight (eta, window_end, time), km, kmph.
 """

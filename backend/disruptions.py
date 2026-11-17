@@ -1,4 +1,4 @@
-"""Roadblocks: detection, background route searches, rerouting, manager alerts, clearing (CLAUDE.md "Disruptions").
+"""Roadblocks: detection, background route searches, rerouting, manager alerts, clearing (PROJECT_SPEC.md "Disruptions").
 
 Nothing here does network I/O and nothing here waits. Route and detour searches run in routing's worker threads
 (routing.submit); poll() applies the finished ones on the next simulation tick. While a detour is being searched

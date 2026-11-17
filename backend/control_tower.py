@@ -1,4 +1,4 @@
-"""Control tower: reacts to live demand and priority changes (CLAUDE.md "Live demand change").
+"""Control tower: reacts to live demand and priority changes (PROJECT_SPEC.md "Live demand change").
 
 Increase  -> shortage = new remaining - milk already committed to the hub. Options:
              A) a truck already out with spare milk adds the hub after its current stop

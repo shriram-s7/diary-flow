@@ -39,7 +39,7 @@ Page 8's timeline, missing from extracted prose: D-1 14:00 suggestions; 16:00 bo
 
 ## Actual repository baseline
 
-Reviewed at commit `05a9d87c2633e562d28c70b308fd55425c14c556`; initial tracked working tree was clean. No repository AGENTS.md was found. Root CLAUDE.md is an existing v1 specification and is ignored by .gitignore: **a handoff that only overwrites that file will not be portable through Git**.
+Reviewed at commit `05a9d87c2633e562d28c70b308fd55425c14c556`; initial tracked working tree was clean. No repository AGENTS.md was found. Root PROJECT_SPEC.md is an existing v1 specification and is ignored by .gitignore: **a handoff that only overwrites that file will not be portable through Git**.
 
 | Area | Evidence | Assessment |
 |---|---|---|
@@ -50,7 +50,7 @@ Reviewed at commit `05a9d87c2633e562d28c70b308fd55425c14c556`; initial tracked w
 | Frontend | frontend/src/App.jsx, DriverView.jsx, hooks, map/TruckAnimator.js | Reuse theme, map motion and interaction patterns; role dashboards and ordering workflows are new. |
 | Offline | frontend/public/sw.js | Fetch-through with cache lookup on failure but no cache population; not evidence of offline delivery sync. |
 | Auth/ML | dependencies, models and API reviewed | No implemented v2 role/scoped authentication or ML pipeline found. |
-| Documentation drift | README vs CLAUDE | Plant coordinates, clock scaling and traffic factor differ. Do not import conflicting defaults blindly. |
+| Documentation drift | README vs PROJECT_SPEC | Plant coordinates, clock scaling and traffic factor differ. Do not import conflicting defaults blindly. |
 
 Baseline validation on 2026-10-08: backend suite produced 99 passes and 3 temporary-directory permission setup errors. The same 3 tests passed when rerun using a workspace-owned temp directory (102 tests accounted for across those runs). Frontend production build passed after the sandbox's process-spawn restriction was lifted; Vite warned of a >500 kB chunk. No browser, phone, stress, real routing or v2 acceptance run was performed.
 

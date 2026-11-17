@@ -146,7 +146,7 @@ Do not mark rows done until prompt acceptance and phase gate evidence exist. Own
 
 - HTTPS trust, Android SDK/device and routing/provider availability are future environment gates, not blockers to this documentation handoff.
 
-- Root CLAUDE.md is ignored by Git. The next agent must keep authoritative v2 specification tracked under docs/.
+- Root-level spec files are not tracked. The next agent must keep authoritative v2 specification tracked under docs/.
 
 
 
@@ -200,7 +200,7 @@ Next exact action:
 
 
 
-2026-10-09: P00/P01 done; stopping per user instruction. Full backend suite: 154 passed in 33.58s (52 new + 102 legacy), one run. No frontend changes, services, migrations or model training. Evidence: [CHECKPOINT_P01.md](CHECKPOINT_P01.md). New files uncommitted; root ignored CLAUDE.md updated to reference repository docs. No active background jobs. Next P02, after user continuation.
+2026-10-09: P00/P01 done; stopping per user instruction. Full backend suite: 154 passed in 33.58s (52 new + 102 legacy), one run. No frontend changes, services, migrations or model training. Evidence: [CHECKPOINT_P01.md](CHECKPOINT_P01.md). New files uncommitted; root ignored PROJECT_SPEC.md updated to reference repository docs. No active background jobs. Next P02, after user continuation.
 
 
 

@@ -4,7 +4,7 @@ User authorized implementation, then requested stopping after the starting promp
 
 ## Delivered
 
-- P00: adopted prototype-1 specification with all D01–D18 decisions, explicit completion deadlines/rounding/packing clarifications, settings registry and unchanged PDF source. Legacy CLAUDE spec archived; root pointer updated (ignored by Git).
+- P00: adopted prototype-1 specification with all D01–D18 decisions, explicit completion deadlines/rounding/packing clarifications, settings registry and unchanged PDF source. Legacy spec archived; root pointer updated (ignored by Git).
 - P01: isolated `backend/v2/domain` package with strict immutable DTOs, settings validation, unit/packing/mass/returnable calculations, exact buffer rounding, spare limits, approval thresholds, timing/cost/utilization, dated UTC events/shifts, lifecycle guards and planner protocol/coverage validation.
 - Contracts and implementation boundaries documented. No v2 routes mounted into FastAPI. No UI change is expected yet.
 

@@ -37,5 +37,4 @@ data/
 *.sqlite3-shm
 
 # Local AI assistant notes
-CLAUDE.md
 .claude/

@@ -83,7 +83,7 @@ WebSocket envelope: schema version, run_id, scope, monotonically increasing stre
 
 ## Migration and deployment boundaries
 
-1. Archive v1 behavior spec in tracked documentation; establish tracked v2 spec. Root CLAUDE.md may point to it when implementation begins, but must not be the only source because it is ignored.
+1. Archive v1 behavior spec in tracked documentation; establish tracked v2 spec. Root PROJECT_SPEC.md may point to it when implementation begins, but must not be the only source because it is ignored.
 2. Build/test v2 domains alongside v1. Avoid adapting v1 live world as the database schema.
 3. Seed demo data into a named isolated run. Existing v1 hubs cannot produce a 70-booth network or SKU demands through a lossless conversion; preserve/export v1 separately. Never silently infer SKUs from litres.
 4. Integrate screens gradually, reuse theme and road motion, leave legacy navigation available until end-to-end gates pass.

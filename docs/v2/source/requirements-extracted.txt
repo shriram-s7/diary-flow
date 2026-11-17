@@ -1,7 +1,7 @@
 === PAGE 1 ===
 Distribution Platform v2 — Requirements
 Specification
-Oct 8, 2026  ·  @Claude
+Oct 8, 2026
 1. Purpose and scope
 This document defines the target system that replaces the current single-level dispatch
 prototype: a demand-driven distribution platform for packaged goods, run on a daily
@@ -971,7 +971,7 @@ Do hub vans belong to the dairy or to contractors paid per trip or per day (affe
 Final product name (working proposal: Allocra).
 Phase Delivers Accepted when
 0. Spec This document turned into the
-project's CLAUDE.md
+project's PROJECT_SPEC.md
 Every later prompt refers to it; no
 conflicting constants
 1. Data and

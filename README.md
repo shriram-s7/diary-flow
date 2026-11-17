@@ -14,7 +14,7 @@ and reacting live when a hub's demand or priority changes. Hub → booth and boo
 
 ![Manager view](screenshots/manager_1440x900.png)
 
-The domain spec and rules are in [`CLAUDE.md`](CLAUDE.md). Backend details and the full API are in
+The domain spec and rules are in [`docs/PROJECT_SPEC.md`](docs/PROJECT_SPEC.md). Backend details and the full API are in
 [`backend/README.md`](backend/README.md).
 
 ## Run it
@@ -147,7 +147,7 @@ frontend/  React + Vite + MapLibre: src/api.js (all calls), src/hooks, src/compo
 docs/v2/   Allocra v2 specification, decisions, acceptance plan and progress log
 e2e/       stress test and browser map-accuracy check
 screenshots/  manager and driver screenshots
-CLAUDE.md  project spec
+PROJECT_SPEC.md  project spec
 ```
 
 ## Tests

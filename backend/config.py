@@ -1,4 +1,4 @@
-"""Single source of truth for DairyFlow constants (see CLAUDE.md).
+"""Single source of truth for DairyFlow constants (see PROJECT_SPEC.md).
 
 All times are minutes from midnight, all quantities are litres, all distances km.
 The frontend reads these values from GET /config and must not hardcode them.

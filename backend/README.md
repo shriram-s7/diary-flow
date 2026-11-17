@@ -1,6 +1,6 @@
 # DairyFlow — Backend
 
-FastAPI service that plans, simulates and re-plans the plant → hub milk run. Domain spec: `../CLAUDE.md`.
+FastAPI service that plans, simulates and re-plans the plant → hub milk run. Domain spec: `../docs/PROJECT_SPEC.md`.
 Overview, formulas and demo flow: `../README.md`.
 
 ## Setup

@@ -1,6 +1,6 @@
 """HTTP + WebSocket API. Every handler that touches the world holds state.lock.
 
-Rules that keep the server responsive (see CLAUDE.md "Never block"):
+Rules that keep the server responsive (see PROJECT_SPEC.md "Never block"):
   * Handlers that do blocking work (the lock, OSRM) are plain `def` (FastAPI runs them in its thread pool).
   * Network I/O (road snapping, route prefetch) never happens while holding state.lock.
   * The async /ws handler never takes the lock on the event loop: it builds each message in a worker thread.

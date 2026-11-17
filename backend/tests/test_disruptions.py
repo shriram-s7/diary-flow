@@ -1,4 +1,4 @@
-"""Disruption engine (CLAUDE.md "Disruptions"): roadblocks reroute at once, costly detours raise an alert but are
+"""Disruption engine (PROJECT_SPEC.md "Disruptions"): roadblocks reroute at once, costly detours raise an alert but are
 still taken, no route -> BLOCKED + red alert, clearing resumes, and nothing ever waits on the network or pauses."""
 import threading
 import time

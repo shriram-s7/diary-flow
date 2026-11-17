@@ -1,6 +1,6 @@
 """Dispatch planner: builds each truck's ordered stops from the plant.
 
-Objective, in strict order (CLAUDE.md):
+Objective, in strict order (PROJECT_SPEC.md):
   (a) cover all demand within plant stock (and fleet capacity),
   (b) use the fewest trucks,
   (c) minimise total km.
